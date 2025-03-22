@@ -1,158 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="/css/style.css"> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="/css/style.css"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <title>Document</title>
 </head>
-<body >
-    <img src="/images/KE_ONS_TW25_LIVE_Generic_0325_STB.gif"
-    style="width: 100%;">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+
+<body>
+  <img src="images/KE_ONS_TW25_LIVE_Generic_0325_STB.gif" style="width: 100%;">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <button style="margin: 5px;" class="btn btn-outline-success" data-bs-toggle="modal"
+          data-bs-target="#cartModal">My Cart</button>
+        <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">My Cart</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">Item Name</th>
+                      <th scope="col">Quantity</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Sub Total</th>
+                    </tr>
+                  </thead>
+                  <tbody class="cart-table">
+
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="3">Total</td>
+                      <td id="cart-total">1000</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Checkout</button>
+              </div>
+            </div>
           </div>
         </div>
-      </nav>
-      <div class="products" style="heigth: auto; min-heigth:100vh; width: auto; width: 100%;">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="products" style="heigth: auto; min-heigth:100vh; width: auto; width: 100%;">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card" style="heigth: 50%">
+          <img src="images/cloudblack.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title product-name">Yeezy 450 "cloud Black"</h5>
+            <p class="card-text">KSH <span class="product-price">1500</span><br> Available</p>
+            <p class="prod-id">1</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary" id="yeezyb">View</a>
+            <a href="#" class="btn btn-primary cart-btn">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card" style="heigth: 50%">
+          <img src="images/conversepink.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title product-name">Converse Chuck Taylor</h5>
+            <p class="card-text">KSH <span class="product-price">2000</span><br> Available</p>
+            <p class="prod-id">2</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary" id="pink">View</a>
+            <a href="#" class="btn btn-primary cart-btn">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card" style="heigth: 50%">
+          <img src="images/vans.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title product-name">Vans Formula 66 ComfyCush</h5>
+            <p class="card-text">KSH <span class="product-price">1500</span><br> Available</p>
+            <p class="prod-id">3</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary" id="vans">View</a>
+            <a href="#" class="btn btn-primary cart-btn">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card" style="heigth: 50%">
+          <img src="images/Samba.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title product-name">Adidas Samba</h5>
+            <p class="card-text">KSH <span class="product-price">1500</span><br> Available</p>
+            <p class="prod-id">4</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary" id="samba">View</a>
+            <a href="#" class="btn btn-primary cart-btn">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br><br><br>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card" style="heigth: 50%">
+          <img src="images/puma.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title product-name">Puma Vikky Platform</h5>
+            <p class="card-text">KSH <span class="product-price"></span><br> Available</p>
+            <p class="prod-id">5</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary" id="puma">View</a>
+            <a href="#" class="btn btn-primary cart-btn">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card" style="heigth: 50%">
+          <img src="images/converse.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title product-name">Converse Chuck T. All Star 70</h5>
+            <p class="card-text">KSH <span class="product-price">2300</span><br> Available</p>
+            <p class="prod-id">6</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary" id="brown">View</a>
+            <a href="#" class="btn btn-primary cart-btn">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card" style="heigth: 50%">
+          <img src="images/cloud.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title product-name">Yeezy 450 "cloud Grey"</h5>
+            <p class="card-text">KSH <span class="product-price">1500</span><br> Available</p>
+            <p class="prod-id">7</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary" id="yeezy">View</a>
+            <a href="#" class="btn btn-primary cart-btn">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card" style="heigth: 50%">
+          <img src="images/J1dior.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title product-name">Air Jordan 1 High Dior</h5>
+            <p class="card-text">KSH <span class="product-price">2000</span><br> Available</p>
+            <p class="prod-id">8</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary" id="dior">View</a>
+            <a href="#" class="btn btn-primary cart-btn">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="javascript/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
-          
-          <div class="row" >
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card" style="heigth: 50%">
-            <img src="/images/cloudblack.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Yeezy 450 "cloud Black"</h5>
-                <p class="card-text">KSH 1500<br> Available</p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="btn btn-primary" id="yeezyb">View</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="card" style="heigth: 50%">
-            <img src="/images/conversepink.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Converse Chuck Taylor</h5>
-              <p class="card-text">KSH 2000<br> Available</p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="btn btn-primary" id="pink">View</a>
-            </div>
-        </div>
-    </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="card" style="heigth: 50%">
-            <img src="/images/vans.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Vans Formula 66 ComfyCush</h5>
-              <p class="card-text">KSH 1500<br> Available</p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="btn btn-primary"id="vans">View</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="card" style="heigth: 50%">
-            <img src="/images/Samba.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Adidas Samba</h5>
-                <p class="card-text">KSH 1500<br> Available</p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="btn btn-primary" id="samba">View</a>
-            </div>
-        </div>
-    </div>
-</div>
-<br>
-<br>
-<br><br><br>
-<div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="card" style="heigth: 50%">
-            <img src="/images/puma.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Puma Vikky Platform</h5>
-                <p class="card-text">KSH 1500<br> Available</p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="btn btn-primary" id="puma">View</a>
-            </div>
-        </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card" style="heigth: 50%">
-                <img src="/images/converse.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Converse Chuck T. All Star 70</h5>
-              <p class="card-text">KSH 2300<br> Available</p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="btn btn-primary" id="brown">View</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="card" style="heigth: 50%">
-            <img src="/images/cloud.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Yeezy 450 "cloud Grey"</h5>
-                <p class="card-text">KSH 1500<br> Available</p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="btn btn-primary" id="yeezy">View</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="card" style="heigth: 50%">
-            <img src="/images/J1dior.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Air Jordan 1 High Dior</h5>
-              <p class="card-text">KSH 2000<br> Available</p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="btn btn-primary" id="dior">View</a>
-            </div>
-        </div>
-    </div>
-</div>
-<script src="/javascript/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+      $(".cart-btn").click(function () {
+        price = parseFloat($(this).closest(".card").children(".card-body").children(".card-text").children(".product-price").text());
+        name = $(this).closest(".card").children(".card-body").children(".product-name").text();
+        id = $(this).closest(".card").children(".card-body").children(".prod-id").text();
+        cartArray = JSON.parse(localStorage.getItem("cart"));
+        cartArray.push({ name, price, id });
+        localStorage.setItem("cart", JSON.stringify(cartArray));
+
+        window.location.reload();
+      });
+
+      $(document).ready(function () {
+        if(localStorage.getItem("cart") === null){
+          localStorage.setItem("cart", "[]");
+        }
+        updateCartHtml();
+      });
+
+      function updateCartHtml() {
+        let cartObj = JSON.parse(localStorage.getItem("cart"));
+        
+          let total = 0;
+          cartObj.forEach((item, index) => {
+            total += item['price'];
+            cartHtml = `<tr class="cart-product">
+                      <td class="prod_id">${item['id']}</td>
+                      <th scope="row">${item['name']}</th>
+                      <td>1</td>
+                      <td>${item['price']}</td>
+                      <td>${item['price']}</td>
+                      <td><a href="#" class="btn btn-danger remove-cart-btn">X</a></td>
+                    </tr>`;
+            $(".cart-table").append(cartHtml);
+          })
+      }
+
+      $(document).on('click', ".remove-cart-btn", function () {
+        let cartObj = JSON.parse(localStorage.getItem("cart"));
+        cartObj.forEach((item, index) => {
+          if (item['id'] == $(this).siblings(".prod_id").text()) {
+            cartObj.splice(index, 1);
+          }
+        })
+        $(this).closest(".cart-product").remove();
+        updateTotal();
+      });
+
+      function updateTotal() {
+        let cartObj = JSON.parse(localStorage.getItem("cart"));
+        let total = 0;
+        cartObj.forEach((item, index) => {
+          total += item['price'];
+        })
+        $("#cart-total").text(total);
+      }
+
+    </script>
 </body>
+
 </html>
