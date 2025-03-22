@@ -57,6 +57,7 @@
                 <table class="table">
                   <thead>
                     <tr>
+                      <th scope="col">ID</th>
                       <th scope="col">Item Name</th>
                       <th scope="col">Quantity</th>
                       <th scope="col">Price</th>
@@ -64,7 +65,14 @@
                     </tr>
                   </thead>
                   <tbody class="cart-table">
+
                   </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="3">Total</td>
+                      <td id="cart-total">1000</td>
+                    </tr>
+                  </tfoot>
                 </table>
               </div>
               <div class="modal-footer">
@@ -89,6 +97,7 @@
           <div class="card-body">
             <h5 class="card-title product-name">Yeezy 450 "cloud Black"</h5>
             <p class="card-text">KSH <span class="product-price">1500</span><br> Available</p>
+            <p class="prod-id">1</p>
           </div>
           <div class="card-footer">
             <a href="#" class="btn btn-primary" id="yeezyb">View</a>
@@ -102,6 +111,7 @@
           <div class="card-body">
             <h5 class="card-title product-name">Converse Chuck Taylor</h5>
             <p class="card-text">KSH <span class="product-price">2000</span><br> Available</p>
+            <p class="prod-id">2</p>
           </div>
           <div class="card-footer">
             <a href="#" class="btn btn-primary" id="pink">View</a>
@@ -115,6 +125,7 @@
           <div class="card-body">
             <h5 class="card-title product-name">Vans Formula 66 ComfyCush</h5>
             <p class="card-text">KSH <span class="product-price">1500</span><br> Available</p>
+            <p class="prod-id">3</p>
           </div>
           <div class="card-footer">
             <a href="#" class="btn btn-primary" id="vans">View</a>
@@ -128,6 +139,7 @@
           <div class="card-body">
             <h5 class="card-title product-name">Adidas Samba</h5>
             <p class="card-text">KSH <span class="product-price">1500</span><br> Available</p>
+            <p class="prod-id">4</p>
           </div>
           <div class="card-footer">
             <a href="#" class="btn btn-primary" id="samba">View</a>
@@ -146,6 +158,7 @@
           <div class="card-body">
             <h5 class="card-title product-name">Puma Vikky Platform</h5>
             <p class="card-text">KSH <span class="product-price"></span><br> Available</p>
+            <p class="prod-id">5</p>
           </div>
           <div class="card-footer">
             <a href="#" class="btn btn-primary" id="puma">View</a>
@@ -159,6 +172,7 @@
           <div class="card-body">
             <h5 class="card-title product-name">Converse Chuck T. All Star 70</h5>
             <p class="card-text">KSH <span class="product-price">2300</span><br> Available</p>
+            <p class="prod-id">6</p>
           </div>
           <div class="card-footer">
             <a href="#" class="btn btn-primary" id="brown">View</a>
@@ -172,6 +186,7 @@
           <div class="card-body">
             <h5 class="card-title product-name">Yeezy 450 "cloud Grey"</h5>
             <p class="card-text">KSH <span class="product-price">1500</span><br> Available</p>
+            <p class="prod-id">7</p>
           </div>
           <div class="card-footer">
             <a href="#" class="btn btn-primary" id="yeezy">View</a>
@@ -185,6 +200,7 @@
           <div class="card-body">
             <h5 class="card-title product-name">Air Jordan 1 High Dior</h5>
             <p class="card-text">KSH <span class="product-price">2000</span><br> Available</p>
+            <p class="prod-id">8</p>
           </div>
           <div class="card-footer">
             <a href="#" class="btn btn-primary" id="dior">View</a>
@@ -204,34 +220,58 @@
       $(".cart-btn").click(function () {
         price = parseFloat($(this).closest(".card").children(".card-body").children(".card-text").children(".product-price").text());
         name = $(this).closest(".card").children(".card-body").children(".product-name").text();
-        let cartArray = JSON.parse(localStorage.getItem("cart"));
-        cartArray.push({ name, price });
+        id = $(this).closest(".card").children(".card-body").children(".prod-id").text();
+        cartArray = JSON.parse(localStorage.getItem("cart"));
+        cartArray.push({ name, price, id });
         localStorage.setItem("cart", JSON.stringify(cartArray));
 
-        updateCartHtml();
+        window.location.reload();
       });
 
       $(document).ready(function () {
+        if(localStorage.getItem("cart") === null){
+          localStorage.setItem("cart", "[]");
+        }
         updateCartHtml();
       });
 
       function updateCartHtml() {
         let cartObj = JSON.parse(localStorage.getItem("cart"));
-        cartObj.forEach((item, index) => {
-          cartHtml = `<tr class="cart-product">
+        
+          let total = 0;
+          cartObj.forEach((item, index) => {
+            total += item['price'];
+            cartHtml = `<tr class="cart-product">
+                      <td class="prod_id">${item['id']}</td>
                       <th scope="row">${item['name']}</th>
                       <td>1</td>
                       <td>${item['price']}</td>
                       <td>${item['price']}</td>
                       <td><a href="#" class="btn btn-danger remove-cart-btn">X</a></td>
                     </tr>`;
-          $(".cart-table").append(cartHtml);
-        })
+            $(".cart-table").append(cartHtml);
+          })
       }
 
       $(document).on('click', ".remove-cart-btn", function () {
+        let cartObj = JSON.parse(localStorage.getItem("cart"));
+        cartObj.forEach((item, index) => {
+          if (item['id'] == $(this).siblings(".prod_id").text()) {
+            cartObj.splice(index, 1);
+          }
+        })
         $(this).closest(".cart-product").remove();
+        updateTotal();
       });
+
+      function updateTotal() {
+        let cartObj = JSON.parse(localStorage.getItem("cart"));
+        let total = 0;
+        cartObj.forEach((item, index) => {
+          total += item['price'];
+        })
+        $("#cart-total").text(total);
+      }
 
     </script>
 </body>
