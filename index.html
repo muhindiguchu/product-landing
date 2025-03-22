@@ -44,6 +44,36 @@
             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </li>
         </ul>
+        <button style="margin: 5px;" class="btn btn-outline-success" data-bs-toggle="modal"
+          data-bs-target="#cartModal">My Cart</button>
+        <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">My Cart</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Item Name</th>
+                      <th scope="col">Quantity</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Sub Total</th>
+                    </tr>
+                  </thead>
+                  <tbody class="cart-table">
+                  </tbody>
+                </table>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Checkout</button>
+              </div>
+            </div>
+          </div>
+        </div>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
@@ -171,16 +201,37 @@
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
     <script>
-      let cart = [];
       $(".cart-btn").click(function () {
         price = parseFloat($(this).closest(".card").children(".card-body").children(".card-text").children(".product-price").text());
         name = $(this).closest(".card").children(".card-body").children(".product-name").text();
-        cart.push({ name, price });
-        localStorage.setItem("cart", JSON.stringify(cart));
+        let cartArray = JSON.parse(localStorage.getItem("cart"));
+        cartArray.push({ name, price });
+        localStorage.setItem("cart", JSON.stringify(cartArray));
 
-        console.log(localStorage.getItem("cart"));
+        updateCartHtml();
       });
 
+      $(document).ready(function () {
+        updateCartHtml();
+      });
+
+      function updateCartHtml() {
+        let cartObj = JSON.parse(localStorage.getItem("cart"));
+        cartObj.forEach((item, index) => {
+          cartHtml = `<tr class="cart-product">
+                      <th scope="row">${item['name']}</th>
+                      <td>1</td>
+                      <td>${item['price']}</td>
+                      <td>${item['price']}</td>
+                      <td><a href="#" class="btn btn-danger remove-cart-btn">X</a></td>
+                    </tr>`;
+          $(".cart-table").append(cartHtml);
+        })
+      }
+
+      $(document).on('click', ".remove-cart-btn", function () {
+        $(this).closest(".cart-product").remove();
+      });
 
     </script>
 </body>
