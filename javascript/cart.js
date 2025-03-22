@@ -196,9 +196,6 @@ let product8 = "Air Jordan 1 High Dior";
     calculateTotal8();
     document.getElementById("size8").innerHTML = '<select id="sizeSelect" onchange="calculateTotal()"><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>';
 
-    let Gtotal = Total + Total2 + Total3 + Total4 + Total5 + Total6 + Total7 + Total8 ;
-
-    console.log(Gtotal)
 };// Declare shipping and Total variables in the global scope
 let shipping = 0;
 let Total = 0, Total2 = 0, Total3 = 0, Total4 = 0, Total5 = 0, Total6 = 0, Total7 = 0, Total8 = 0;
@@ -220,10 +217,8 @@ function checkLocation() {
 }
 
 document.getElementById("tot").onclick = function payment() {
-    console.log("Total: ", Total);
-    console.log("Total2: ", Total2);
-    console.log("Shipping: ", shipping);
-    // let grandTotal = Total + Total2 + Total3 + Total4 + Total5 + Total6 + Total7 + Total8 + shipping;
-    console.log("Grand Total: ", grandTotal);
+    console.log("Total: " + Total);
+    console.log("Total2: " + Total2);
+    let grandTotal = Total + Total2 + Total3 + Total4 + Total5 + Total6 + Total7 + Total8 + shipping;
     document.getElementById("grandTotal").innerHTML = "Grand Total: " + grandTotal + " Ksh";
 };
