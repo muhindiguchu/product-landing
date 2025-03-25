@@ -251,6 +251,7 @@
                     </tr>`;
             $(".cart-table").append(cartHtml);
           })
+          document.getElementById("cart-total").innerText = total;
       }
 
       $(document).on('click', ".remove-cart-btn", function () {
