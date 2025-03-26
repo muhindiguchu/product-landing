@@ -7,26 +7,31 @@
   <!-- <link rel="stylesheet" href="/css/style.css"> -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+ 
+    <title>Document</title>
 </head>
 
-<body>
+<body style="background-color: antiquewhite;">
   <img src="images/KE_ONS_TW25_LIVE_Generic_0325_STB.gif" style="width: 100%;">
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #f8f9fa;">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="background-color: antiquewhite;">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="/index.html
+            
+            \"><i class="fa-solid fa-house"></i></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
           </li>
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit" >Search</button>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dropdown
@@ -41,19 +46,24 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            <a class="nav-link disabled" aria-disabled="false"><i class="fa-solid fa-user"></i> </a>
           </li>
         </ul>
         <button style="margin: 5px;" class="btn btn-outline-success" data-bs-toggle="modal"
-          data-bs-target="#cartModal">My Cart</button>
+        data-bs-target="#cartModal"
+        >My Cart
+        <i class="fa-solid fa-cart-shopping"></i></button>
         <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">My Cart</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">My Cart
+                  <i class="fa-solid fa-cart-shopping"></i>
+
+                </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="border: none;"></button>
               </div>
-              <div class="modal-body">
+              <div class="modal-body" style="background-color: antiquewhite;">
                 <table class="table">
                   <thead>
                     <tr>
@@ -83,8 +93,6 @@
           </div>
         </div>
         <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       </div>
     </div>
@@ -94,56 +102,56 @@
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card" style="heigth: 50%">
           <img src="images/cloudblack.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
+          <div class="card-body"style="background-color: antiquewhite;">
             <h5 class="card-title product-name">Yeezy 450 "cloud Black"</h5>
             <p class="card-text">KSH <span class="product-price">1500</span><br> Available</p>
             <p class="prod-id">1</p>
           </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary" id="yeezyb">View</a>
-            <a href="#" class="btn btn-primary cart-btn">Add to Cart</a>
+          <div class="card-footer" style="background-color: antiquewhite; border-top: none;">
+            <a href="#" class="btn btn-primary" id="yeezyb"  style="background-color: orange; border: none;">View</a>
+            <a href="#cartModal" class="btn btn-primary cart-btn"  style="background-color: orange; border: none;">Add to Cart</a>
           </div>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card" style="heigth: 50%">
           <img src="images/conversepink.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
+          <div class="card-body" style="background-color: antiquewhite;">
             <h5 class="card-title product-name">Converse Chuck Taylor</h5>
             <p class="card-text">KSH <span class="product-price">2000</span><br> Available</p>
             <p class="prod-id">2</p>
           </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary" id="pink">View</a>
-            <a href="#" class="btn btn-primary cart-btn">Add to Cart</a>
+          <div class="card-footer" style="background-color: antiquewhite; border-top: none;">
+            <a href="#" class="btn btn-primary" id="pink"  style="background-color: orange; border: none;">View</a>
+            <a href="#" class="btn btn-primary cart-btn" style="background-color: orange; border: none;">Add to Cart</a>
           </div>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card" style="heigth: 50%">
           <img src="images/vans.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
+          <div class="card-body" style="background-color: antiquewhite;">
             <h5 class="card-title product-name">Vans Formula 66 ComfyCush</h5>
             <p class="card-text">KSH <span class="product-price">1500</span><br> Available</p>
             <p class="prod-id">3</p>
           </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary" id="vans">View</a>
-            <a href="#" class="btn btn-primary cart-btn">Add to Cart</a>
+          <div class="card-footer" style="background-color: antiquewhite; border-top: none;">
+            <a href="#" class="btn btn-primary" id="vans"  style="background-color: orange; border: none;">View</a>
+            <a href="#" class="btn btn-primary cart-btn"  style="background-color: orange; border: none;">Add to Cart</a>
           </div>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card" style="heigth: 50%">
           <img src="images/Samba.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
+          <div class="card-body" style="background-color: antiquewhite;">
             <h5 class="card-title product-name">Adidas Samba</h5>
             <p class="card-text">KSH <span class="product-price">1500</span><br> Available</p>
             <p class="prod-id">4</p>
           </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary" id="samba">View</a>
-            <a href="#" class="btn btn-primary cart-btn">Add to Cart</a>
+          <div class="card-footer" style="background-color: antiquewhite; border-top: none;">
+            <a href="#" class="btn btn-primary" id="samba" style="background-color: orange; border: none;">View</a>
+            <a href="#" class="btn btn-primary cart-btn"  style="background-color: orange; border: none;">Add to Cart</a>
           </div>
         </div>
       </div>
@@ -155,56 +163,56 @@
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card" style="heigth: 50%">
           <img src="images/puma.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
+          <div class="card-body" style="background-color: antiquewhite;">
             <h5 class="card-title product-name">Puma Vikky Platform</h5>
             <p class="card-text">KSH <span class="product-price"></span><br> Available</p>
             <p class="prod-id">5</p>
           </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary" id="puma">View</a>
-            <a href="#" class="btn btn-primary cart-btn">Add to Cart</a>
+          <div class="card-footer" style="background-color: antiquewhite; border-top: none;">
+            <a href="#" class="btn btn-primary" id="puma"  style="background-color: orange; border: none;">View</a>
+            <a href="#" class="btn btn-primary cart-btn"  style="background-color: orange; border: none;">Add to Cart</a>
           </div>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card" style="heigth: 50%">
           <img src="images/converse.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
+          <div class="card-body" style="background-color: antiquewhite;">
             <h5 class="card-title product-name">Converse Chuck T. All Star 70</h5>
             <p class="card-text">KSH <span class="product-price">2300</span><br> Available</p>
             <p class="prod-id">6</p>
           </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary" id="brown">View</a>
-            <a href="#" class="btn btn-primary cart-btn">Add to Cart</a>
+          <div class="card-footer" style="background-color: antiquewhite; border-top: none;">
+            <a href="#" class="btn btn-primary" id="brown" style="background-color: orange; border: none;">View</a>
+            <a href="#" class="btn btn-primary cart-btn"  style="background-color: orange; border: none;">Add to Cart</a>
           </div>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card" style="heigth: 50%">
           <img src="images/cloud.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
+          <div class="card-body" style="background-color: antiquewhite;">
             <h5 class="card-title product-name">Yeezy 450 "cloud Grey"</h5>
             <p class="card-text">KSH <span class="product-price">1500</span><br> Available</p>
             <p class="prod-id">7</p>
           </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary" id="yeezy">View</a>
-            <a href="#" class="btn btn-primary cart-btn">Add to Cart</a>
+          <div class="card-footer" style="background-color: antiquewhite; border-top: none;">
+            <a href="#" class="btn btn-primary" id="yeezy"  style="background-color: orange; border: none;">View</a>
+            <a href="#" class="btn btn-primary cart-btn" style="background-color: orange; border: none;">Add to Cart</a>
           </div>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card" style="heigth: 50%">
           <img src="images/J1dior.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
+          <div class="card-body" style="background-color: antiquewhite;">
             <h5 class="card-title product-name">Air Jordan 1 High Dior</h5>
             <p class="card-text">KSH <span class="product-price">2000</span><br> Available</p>
             <p class="prod-id">8</p>
           </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary" id="dior">View</a>
-            <a href="#" class="btn btn-primary cart-btn">Add to Cart</a>
+          <div class="card-footer" style="background-color: antiquewhite; border-top: none;">
+            <a href="#" class="btn btn-primary" id="dior" style="background-color: orange; border: none;">View</a>
+            <a href="#" class="btn btn-primary cart-btn"  style="background-color: orange; border: none;">Add to Cart</a>
           </div>
         </div>
       </div>
@@ -221,7 +229,11 @@
         price = parseFloat($(this).closest(".card").children(".card-body").children(".card-text").children(".product-price").text());
         name = $(this).closest(".card").children(".card-body").children(".product-name").text();
         id = $(this).closest(".card").children(".card-body").children(".prod-id").text();
-        cartArray = JSON.parse(localStorage.getItem("cart"));
+        cartArray = JSON.parse(localStorage.getItem("cart")) || [];//check if cart is empty
+        let existinItem = cartArray.find(item => item.id == id);
+        if(!existinItem){
+          cartArray.push({ name, price, id });
+        } //this is a modification
         cartArray.push({ name, price, id });
         localStorage.setItem("cart", JSON.stringify(cartArray));
 
